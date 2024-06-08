@@ -51,6 +51,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    // MARK: Deeplinks
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+        
+        if DeeplinkManager.shared.handleDeeplink(url: url) {
+            DeeplinkManager.shared.checkDeepLink()
+        }        
+    }
+    
+    // MARK: Universal Links
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+           if let url = userActivity.webpageURL {
+              DeeplinkManager.shared.handleDeeplink(url: url)
+           }
+        }
+    }
 }
 

@@ -34,14 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Deeplinks
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print(url.absoluteString)
+        //Начиная с версии iOS 13 вызывается метод "openURLContexts" в scene delegate
         return DeeplinkManager.shared.handleDeeplink(url: url)
     }
         
     // MARK: Universal Links
     
     private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-       if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+        //Начиная с версии iOS 13 вызывается метод "continue" в scene delegate
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
           if let url = userActivity.webpageURL {
              return DeeplinkManager.shared.handleDeeplink(url: url)
           }
