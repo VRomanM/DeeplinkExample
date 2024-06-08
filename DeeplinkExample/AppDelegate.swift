@@ -31,6 +31,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    // MARK: Deeplinks
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url.absoluteString)
+        return DeeplinkManager.shared.handleDeeplink(url: url)
+    }
+        
+    // MARK: Universal Links
+    
+    private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+       if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+          if let url = userActivity.webpageURL {
+             return DeeplinkManager.shared.handleDeeplink(url: url)
+          }
+       }
+       return false
+    }
+        
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        DeeplinkManager.shared.checkDeepLink()
+    }
 }
 

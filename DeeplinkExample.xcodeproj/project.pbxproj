@@ -13,6 +13,9 @@
 		FC4C6BC42C139CA70008D318 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6BC32C139CA70008D318 /* Base */; };
 		FC4C6BC62C139CA80008D318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6BC52C139CA80008D318 /* Assets.xcassets */; };
 		FC4C6BC92C139CA80008D318 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FC4C6BC82C139CA80008D318 /* Base */; };
+		FC4C6BD12C139E8E0008D318 /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6BD02C139E8E0008D318 /* DeeplinkManager.swift */; };
+		FC4C6BD42C139EC80008D318 /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6BD32C139EC80008D318 /* DeeplinkNavigator.swift */; };
+		FC4C6BD62C139F230008D318 /* DeeplinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4C6BD52C139F230008D318 /* DeeplinkParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FC4C6BC52C139CA80008D318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC4C6BC82C139CA80008D318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC4C6BCA2C139CA80008D318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC4C6BD02C139E8E0008D318 /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		FC4C6BD32C139EC80008D318 /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
+		FC4C6BD52C139F230008D318 /* DeeplinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +69,19 @@
 				FC4C6BC52C139CA80008D318 /* Assets.xcassets */,
 				FC4C6BC72C139CA80008D318 /* LaunchScreen.storyboard */,
 				FC4C6BCA2C139CA80008D318 /* Info.plist */,
+				FC4C6BD22C139EAD0008D318 /* Deeplink */,
 			);
 			path = DeeplinkExample;
+			sourceTree = "<group>";
+		};
+		FC4C6BD22C139EAD0008D318 /* Deeplink */ = {
+			isa = PBXGroup;
+			children = (
+				FC4C6BD02C139E8E0008D318 /* DeeplinkManager.swift */,
+				FC4C6BD32C139EC80008D318 /* DeeplinkNavigator.swift */,
+				FC4C6BD52C139F230008D318 /* DeeplinkParser.swift */,
+			);
+			path = Deeplink;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4C6BD42C139EC80008D318 /* DeeplinkNavigator.swift in Sources */,
 				FC4C6BC12C139CA70008D318 /* ViewController.swift in Sources */,
+				FC4C6BD62C139F230008D318 /* DeeplinkParser.swift in Sources */,
 				FC4C6BBD2C139CA70008D318 /* AppDelegate.swift in Sources */,
 				FC4C6BBF2C139CA70008D318 /* SceneDelegate.swift in Sources */,
+				FC4C6BD12C139E8E0008D318 /* DeeplinkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VRomamanM.DeeplinkExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Deeplink.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -333,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VRomamanM.DeeplinkExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Deeplink.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
